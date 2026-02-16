@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campus Life Planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+    <h1>Campus Life Planner</h1>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#records">Tasks</a></li>
+            <li><a href="#form-section">Add Task</a></li>
+            <li><a href="#settings">Settings</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main-content">
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>About</h2>
+        <p>
+            Campus Life Planner helps students manage tasks, track study duration,
+            and organize activities using tags and search.
+        </p>
+        <p>
+            GitHub: yourusername | Email: your@email.com
+        </p>
+    </section>
+
+
+    <!-- DASHBOARD SECTION -->
+    <section id="dashboard">
+        <h2>Dashboard</h2>
+
+        <div class="stats-container">
+            <div>
+                <h3>Total Tasks</h3>
+                <p id="total-tasks">0</p>
+            </div>
+
+            <div>
+                <h3>Total Duration</h3>
+                <p id="total-duration">0 minutes</p>
+            </div>
+
+            <div>
+                <h3>Top Tag</h3>
+                <p id="top-tag">-</p>
+            </div>
+        </div>
+
+        <div id="cap-message" role="status" aria-live="polite"></div>
+    </section>
+
+
+    <!-- TASK LIST SECTION -->
+    <section id="records">
+        <h2>Tasks</h2>
+
+        <div class="search-container">
+            <label for="search">Search (Regex supported)</label>
+            <input type="text" id="search" placeholder="Example: @tag:Exam">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Due Date</th>
+                    <th>Duration</th>
+                    <th>Tag</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="task-table-body">
+                <!-- Tasks will render here -->
+            </tbody>
+        </table>
+    </section>
+
+
+    <!-- ADD TASK FORM -->
+    <section id="form-section">
+        <h2>Add Task</h2>
+
+        <form id="task-form" novalidate>
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" required>
+                <small class="error" id="title-error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="dueDate">Due Date</label>
+                <input type="date" id="dueDate" required>
+                <small class="error" id="date-error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Duration (minutes)</label>
+                <input type="number" id="duration" required>
+                <small class="error" id="duration-error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="tag">Tag</label>
+                <input type="text" id="tag" required>
+                <small class="error" id="tag-error"></small>
+            </div>
+
+            <button type="submit">Add Task</button>
+
+        </form>
+    </section>
+
+
+    <!-- SETTINGS SECTION -->
+    <section id="settings">
+        <h2>Settings</h2>
+
+        <div class="form-group">
+            <label for="weekly-cap">Weekly Study Cap (minutes)</label>
+            <input type="number" id="weekly-cap">
+        </div>
+
+        <div class="form-group">
+            <label for="unit">Display Unit</label>
+            <select id="unit">
+                <option value="minutes">Minutes</option>
+                <option value="hours">Hours</option>
+            </select>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Campus Life Planner</p>
+</footer>
+
+<script type="module" src="scripts/main.js"></script>
+
+</body>
+</html>
